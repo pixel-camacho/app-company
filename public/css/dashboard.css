@@ -12,38 +12,35 @@ body {
 
 .contenedor {
   display: flex;
-  width: 90%;
+  width: 100%;
   height: 100vh;
-  margin: 0 auto;
 }
 
 #slider {
   position: fixed;
-  width: 300px;
+  width: 18.8rem;
   height: 100vh;
   background-color: white;
   z-index: 3;
 }
 
-
 .perfil {
   border-radius: 8px;
   width: 40%;
-  background: black;
-  margin: 20px 20px;
+  margin: 1.2rem 1.2rem;
 }
 
 label {
   display: block;
   font-size: 1.2em;
   font-weight: 600;
-  margin: 0 20px;
+  margin: 0  1.2rem;
   margin-top: 15px;
 }
 
 .user {
   display: block;
-  padding: 15px 20px;
+  padding: 1rem 1.2rem;
   font-size: .9em;
   font-weight: 300;
   color: #595959;
@@ -53,14 +50,14 @@ label {
   font-size: .9em;
   font-weight: 400;
   list-style: none;
-  padding: 10px 20px;
+  padding: .6rem 1.2rem;
   
 }
 
 #slider ul li a{
   text-decoration: none;
   color: 	 #1a1a1a;
-  padding-left: 12px;
+  padding-left: 1rem;
 }
 
 

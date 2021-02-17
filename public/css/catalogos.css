@@ -1,0 +1,93 @@
+.dashboard{
+    width: 85%; 
+    margin-left: 18.8rem;
+   }
+   
+   .dashboard .title{
+     font-size: 2.5em;
+     font-weight: 400;
+     padding: 1rem 1.2rem;
+   }
+   
+   .dashboard .search{
+     display: inline-block;
+     font-weight: 400;
+   }
+   
+   .filter{
+     margin-bottom: 1.7rem;
+   }
+   
+   .dashboard .option{
+     padding: .5rem;
+     background-color: #fff;
+     margin-left: .4rem;;
+     font-weight: 300;
+   }
+   
+   #black{
+     background: #000;
+     color: #fff;
+   }
+   
+   .separator{
+   width: 98%;
+   height: .5rem;
+   margin: 0 auto;;
+   background: #cccccc;
+   border: none;
+   }
+   
+   .contenedor-tarjetas{
+    display: flex;
+    height: 79vh;
+    flex-wrap: wrap;
+    margin: .9rem;
+   }
+   
+   .card{
+     position: relative;
+     width: 15rem;
+     height: 25rem;
+     font-size: 2em;
+     margin: 1rem;
+     background-color: #fff;
+     transition: box-shadow .3s linear;
+   }
+   
+   .card img{
+     display: block;
+     width: 14rem;
+     margin: 0 auto;
+     margin-top: .6rem;
+   }
+   
+   .close{
+     position: absolute;
+     top: 0;
+     right: 0;
+     font-size: .7em;
+     padding: .6rem;
+   }
+   
+   .card h5{
+     font-size: 1.1rem;
+     text-align: center;
+     padding: .7rem 0;
+   }
+
+   /* hover*/
+
+   .dashboard .option:hover{
+    background-color: darkgrey;
+    cursor: pointer;
+  }
+  
+  .dashboard #black:hover{
+    color: #000;
+    background-color: darkgray;
+  }
+  
+  .card:hover{
+    box-shadow: 0 0 .7rem rgba(0,0,0,.8);
+  }

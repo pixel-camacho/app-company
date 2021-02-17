@@ -112,7 +112,7 @@ form .input input:focus{
     font-weight: 700;
     opacity: .6;
     border-radius: 12px;
-    transition: all .5s;
+  
 }
 
 .error{
