@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+
+#slider {
+  position: fixed;
+  width: 18.8rem;
+  height: 100vh;
+  background-color: white;
+  z-index: 3;
+}
+
+.perfil {
+  border-radius: 8px;
+  width: 40%;
+  margin: 1.2rem 1.2rem;
+}
+
+label {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 0  1.2rem;
+  margin-top: 15px;
+}
+
+.user {
+  display: block;
+  padding: 1rem 1.2rem;
+  font-size: .9em;
+  font-weight: 300;
+  color: #595959;
+}
+
+#slider ul li {
+  font-size: .9em;
+  font-weight: 400;
+  list-style: none;
+  padding: .6rem 1.2rem;
+  
+}
+
+#slider ul li a{
+  text-decoration: none;
+  color: 	 #1a1a1a;
+  padding-left: 1rem;
+}
+
+
+
+/*hover*/
+#slider ul li:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+
+/* media query*/
+
+@media (max-width: 1000px) {
+  .slider ul li,
+  label,
+  .user {
+    font-size: .9em;
+  }
+
+  .slider ul li {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 610px){
+
+  .slider ul li,
+  label,
+  .user{
+    font-size: .8em;
+  }
+}

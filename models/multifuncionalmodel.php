@@ -7,6 +7,7 @@ class MultifuncionalModel extends Model implements IModel {
     private $modelo;
     private $cantidad;
     private $serie;
+    private $image;
 
     function __construct(){
         parent::__construct();
@@ -15,6 +16,7 @@ class MultifuncionalModel extends Model implements IModel {
         $this->modelo = '';
         $this->cantidad = '';
         $this->serie = '';
+        $this->image = '';
     }
 
     //SET
@@ -23,7 +25,7 @@ public function setMarca($marca){ $this->marca = $marca;}
 public function setModelo($modelo) { $this->modelo = $modelo; }
 public function setCantidad($cantidad){ $this->cantidad = $cantidad; }
 public function setSerie($serie){ $this->serie = $serie; }
-
+public function setImage($image){ $this->image = $image; }
 
 //GET
 public function getIdMultifuncional() { return $this->idMultifuncional; }
@@ -31,16 +33,17 @@ public function getmarca (){ return $this->marca; }
 public function getmodelo() {return $this->modelo; }
 public function getCantidad() { return $this->cantidad; }
 public function getSerie() { return $this->serie; }
-
+public function getImagen() { return $this->image; }
 
     public function save(){
         try {
-            $query = $this->prepare('INSET INTO multifuncional (marca,modelo,cantidad,serie) VALUES (:marca,:modelo,:cantidad,:serie)');
+            $query = $this->prepare('INSET INTO multifuncional (marca,modelo,cantidad,serie,image) VALUES (:marca,:modelo,:cantidad,:serie,:image)');
             $query->execute([
                 'marca' => $this->marca,
                 'modelo' => $this->modelo,
                 'cantidad' => $this->cantidad,
-                'serie' => $this->serie
+                'serie' => $this->serie,
+                'image' => $this->image
                 ]);
                 return true;
         } catch (PDOException $e) {
@@ -62,7 +65,8 @@ public function getSerie() { return $this->serie; }
                 $item->setModelo($p['modelo']);
                 $item->setCantidad($p['cantidad']);
                 $item->setSerie($p['serie']);
-        
+                $item->setImage($p['image']);
+                
                 array_push($items,$item);
             }
             return $items;
@@ -83,7 +87,8 @@ public function getSerie() { return $this->serie; }
             $this->setModelo($multifuncional['modelo']);
             $this->setCantidad($multifuncional['cantidad']);
             $this->setSerie($multifuncional['serie']);
-    
+            $this->setImage($multifuncional['image']);
+            
             return $this;
             
         } catch (PDOException $e) {
@@ -107,13 +112,15 @@ public function getSerie() { return $this->serie; }
             $query = $this->prepare('UPDATE nultifuncional SET marca = :marca, 
                                                                modelo = :modelo,
                                                                cantidad = :cantidad,
-                                                               serie = :serie WHERE idMultifuncional = :idMultifuncional');
+                                                               serie = :serie,
+                                                               image = :image WHERE idMultifuncional = :idMultifuncional');
             $query->execute([
                 'idMultifuncional' => $this->idMultifuncional,
                 'marca' => $this->marca,
                 'modelo' => $this->modelo,
                 'cantidad' => $this->cantidad,
-                'serie' => $this->serie
+                'serie' => $this->serie,
+                'image' =>  $this->image
             ]);
             return true;
         } catch (PDOException $e) {
@@ -128,6 +135,8 @@ public function getSerie() { return $this->serie; }
      $this->modelo = $array['modelo'];
      $this->cantidad = $array['cantidad'];
      $this->serie = $array['serie'];
+     $this->image = $array['image'];
+
     }
 
 }

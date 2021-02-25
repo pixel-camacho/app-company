@@ -1,10 +1,13 @@
-const btn = document.querySelector('#toogle-btn');
-
-btn.addEventListener('click', ()=>{
- 
- const slider = document.getElementById('slider').classList.toggle('active');
-
-})
-
-
-
+setTimeout(()=>{
+    if(document.querySelector('.success')){
+        let alerta = document.querySelector('.success');
+        alerta.style.display = 'none';
+    }
+    },3500);
+    
+    setTimeout(()=>{
+        if(document.querySelector('.error')){
+            let alerta = document.querySelector('.error');
+            alerta.style.display = 'none';      
+        }
+      },3500);

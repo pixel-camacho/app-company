@@ -9,12 +9,11 @@
     <link rel="stylesheet" href="<?php echo constant('URL')?>/public/css/catalogos.css">
 </head>
 <body>
-
+<?php echo $this->showMessages();?>
 <div class="dashboard">
         <h2 class="title">Mis catalogos</h2>
         <div class="filter">
         <label class="search">Filtro:</label>
-        <span class="option" id="black">TODOS</span>
         <span class="option">
             <i class="fas fa-print"></i>
             Multifuncionales
@@ -31,13 +30,30 @@
         <hr class="separator">
 
         <div class="contenedor-tarjetas">
-
+       <?php foreach($multifuncionales as $multifuncional) {?>
+        <?php if(count($multifuncionales) > 0) { ?>     
             <div class="card">
-                <a href="#" title="Eliminar"><i class="fas fa-times close"></i></a> 
-                <img src="<?php echo constant('URL');?>/public/img/multifuncional5.png" alt="imagen de multifuncional">
-                <h5>Brother HLL9310CDW</h5>
+                <a href="<?php echo constant('URL').'/dashboard/eliminarTarjeta?id='.$multifuncional->getIdMultifuncional();?>" title="Eliminar"><i class="fas fa-times close"></i></a> 
+                <img src="<?php echo constant('URL').'/public/img/printer.png';?>" alt="imagen de multifuncional">
+                <h5><?php echo $multifuncional->getMarca().' '.$multifuncional->getModelo() ?? 'EMPTY'; ?></h5>
+                <div class="especificaciones">
+                <label>Cantidad</label>
+                <span><?php  echo $multifuncional->getCantidad().' pz' ?? 0; ?></span>
+                <br>
+                <label>Serie</label>
+                <span><?php echo $multifuncional->getSerie() ?? 'XXXXXXXXX';?></span>
             </div>
-    </div> 
+            <div class="botonera">
+                   <a href="#" title="Editar">
+                         <i class="far fa-edit"></i>
+                   </a>
+               </div> 
+            </div>
+            <?php } else { ?>
+                <h4>Catalo vacio</h4>
+                <?php }?>
+    <?php } ?>
 </div>
+<script src="<?php echo constant('URL');?>/public/js/dashboard.js"></script>
 </body>
 </html>

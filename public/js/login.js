@@ -18,9 +18,9 @@ function mostrarOcultar(){
 setTimeout(()=>{
 let alerta = document.querySelector('.success');
 alerta.style.display = 'none';
-},3000);
+},3500);
 
 setTimeout(()=>{
   let alerta = document.querySelector('.error');
   alerta.style.display = 'none';
-  },3000);
+  },3500);

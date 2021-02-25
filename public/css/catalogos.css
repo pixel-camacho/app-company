@@ -24,12 +24,7 @@
      margin-left: .4rem;;
      font-weight: 300;
    }
-   
-   #black{
-     background: #000;
-     color: #fff;
-   }
-   
+     
    .separator{
    width: 98%;
    height: .5rem;
@@ -48,11 +43,12 @@
    .card{
      position: relative;
      width: 15rem;
-     height: 25rem;
+     height: 27rem;
      font-size: 2em;
      margin: 1rem;
      background-color: #fff;
      transition: box-shadow .3s linear;
+     border-radius: 10px;
    }
    
    .card img{
@@ -68,13 +64,51 @@
      right: 0;
      font-size: .7em;
      padding: .6rem;
+     color: mediumturquoise;
    }
    
    .card h5{
-     font-size: 1.1rem;
+     font-size: 1rem;
      text-align: center;
      padding: .7rem 0;
    }
+
+   .card .especificaciones,
+   .card .botonera{
+    width: 80%;
+    margin: 0 auto;
+   }
+
+.card .botonera{
+  margin-top: 10px;
+  height: 15%;
+  text-align: right;
+}
+
+.card .especificaciones label{
+  display: inline-block;
+  width: 45%;
+  font-size: .5em;
+  color: #595959;
+  margin: 0;
+}
+
+.card .especificaciones span{
+  font-size: .4em;
+  color: #a39c9ce5;
+}
+
+.card .botonera a{
+  font-size: .6em;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  margin-left: 20px;
+  background-color: cyan;
+  line-height: 55px;
+}
 
    /* hover*/
 
@@ -87,7 +121,25 @@
     color: #000;
     background-color: darkgray;
   }
-  
+
   .card:hover{
-    box-shadow: 0 0 .7rem rgba(0,0,0,.8);
+    box-shadow: 0 0 .8rem rgba(100,100,100,.7);
   }
+    
+/*ALERT*/
+.success , .error{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 20px;
+  background: #00cc00;
+  color: white;
+  font-weight: 700;
+  opacity: .6;
+  border-radius: 12px;
+
+}
+
+.error{
+  background: #ff471a;
+}
