@@ -76,6 +76,23 @@ public function getImagen() { return $this->image; }
         }
     }
 
+    public function getAllJSON(){
+
+        try {
+            $query = $this->query('SELECT * FROM multifuncional');
+    
+            while($p = $query->fetch(PDO::FETCH_ASSOC)){
+
+                $items [] = $p;
+            }
+            return json_encode($items);
+        } catch (PDOException $e) {
+            error_log('MULTIFUNCIONALMODEL::getAllJSON->PDOException '.$e);
+            return false;
+        }
+
+    }
+
     public function get($idMultifuncional){
         try {
             $query = $this->prepare('SELECT * FROM multifuncional WHERE idMultifuncional = :idMultifuncional');

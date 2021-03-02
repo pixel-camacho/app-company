@@ -98,7 +98,7 @@
   color: #a39c9ce5;
 }
 
-.card .botonera a{
+.card .botonera button{
   font-size: .6em;
   text-decoration: none;
   color: white;
@@ -107,7 +107,8 @@
   border-radius: 12px;
   margin-left: 20px;
   background-color: cyan;
-  line-height: 55px;
+  cursor: pointer;
+  outline: none;
 }
 
    /* hover*/
@@ -125,6 +126,42 @@
   .card:hover{
     box-shadow: 0 0 .8rem rgba(100,100,100,.7);
   }
+
+  /*POPUP*/
+
+  .overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:  rgba(0,0,0,.5);
+    transition: opacity .4s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#popupBody{
+    width: 30%;
+    padding: 2%;
+    border-radius: .7rem;
+    box-shadow: 0 0  5px #ccc;
+    background: #fff;
+    position: relative;
+    margin: 20% auto;
+}
+
+#cerrar{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: lightsteelblue;
+    text-decoration: all .2s;
+}
+
     
 /*ALERT*/
 .success , .error{

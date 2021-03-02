@@ -16,7 +16,7 @@ class Dashboard extends SessionController{
         
         $multifuncionales = new MultifuncionalModel(); 
         $this->view->render('dashboard/index',['usuario' => $this->user,
-                                               'multifuncionales' => $multifuncionales->getAll()]);
+                                               'multifuncionales' => $multifuncionales->getAllJSON()]);
     }
 
     function salir(){
@@ -25,11 +25,7 @@ class Dashboard extends SessionController{
     }
 
     function eliminarTarjeta(){
-    
-        if(!$this->existsGET(['id'])){
-           //error10
-        }
-
+        
         $id = $this->getGET('id');
         $multifuncional = new MultifuncionalModel();
 
